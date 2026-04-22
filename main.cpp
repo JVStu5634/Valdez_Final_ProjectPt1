@@ -39,7 +39,46 @@ for (int i = 0; i < SIZE; i++) {
 
 inFile.close();
 
+cout << "---- Todays Quiz Scores ----" << endl;
 
+displayData(students, SIZE);
+
+int highestIndex = 0;
+int lowestIndex = 0;
+
+findMinMax(students, SIZE, highestIndex, lowestIndex);
+
+cout << "--- Class Stats ---" << endl;
+cout << "Highest Score: " << students[highestIndex].score 
+     << " (Student: " << students[hisghestIndex].name << " ) " << endl;
+cout << "Lowest Score: " << students[lowestIndex].score
+     << " (Student: " << students[lowestIndex].name << " ) " << endl;
+
+return 0;
+
+}
+
+void displayData(Class students[], int size) {
+
+  cout << left << setw(15) << "Name" << "Score" << endl;
+    for (int i = 0; i < size; i++) {
+      cout << left << setw(15) << students[i].name << students[i].score << endl;
+    }
+}
+void findMinMax(Class students[], int size, int& maxIdx, int& minIdx) {
+
+  maxIdx = 0;
+  minIdx = 0;
+
+for (int i = 0; i < size; i++) {
+    if (students[i].score > students[maxIdx].score {
+        maxIdx = i;
+    }
+    if (students[i].score > students[minIdx].score) {
+        minIdx = i;
+    }
+  }
+}
 
 
 
