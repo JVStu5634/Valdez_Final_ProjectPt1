@@ -27,12 +27,12 @@ ifstream inFile;
 inFile.open("Input.txt");
 
 if (!inFile) {
-  cout << "Error: Cannot open input file "Input.txt" << endl;
+  cout << "Error: Cannot open. File not found." << endl;
   return 1;
   }
 
 for (int i = 0; i < SIZE; i++) {
-  if (!inFile >> students[i].name >> students[i].score)) {
+  if (!(inFile >> students[i].name >> students[i].score)) {
   break;
   }
 }
@@ -50,7 +50,7 @@ findMinMax(students, SIZE, highestIndex, lowestIndex);
 
 cout << "--- Class Stats ---" << endl;
 cout << "Highest Score: " << students[highestIndex].score 
-     << " (Student: " << students[hisghestIndex].name << " ) " << endl;
+     << " (Student: " << students[highestIndex].name << " ) " << endl;
 cout << "Lowest Score: " << students[lowestIndex].score
      << " (Student: " << students[lowestIndex].name << " ) " << endl;
 
@@ -70,11 +70,11 @@ void findMinMax(Class students[], int size, int& maxIdx, int& minIdx) {
   maxIdx = 0;
   minIdx = 0;
 
-for (int i = 0; i < size; i++) {
-    if (students[i].score > students[maxIdx].score {
+for (int i = 1; i < size; i++) {
+    if (students[i].score > students[maxIdx].score) {
         maxIdx = i;
     }
-    if (students[i].score > students[minIdx].score) {
+    if (students[i].score < students[minIdx].score) {
         minIdx = i;
     }
   }
